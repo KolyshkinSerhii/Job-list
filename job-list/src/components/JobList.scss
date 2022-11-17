@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  position: absolute;
+  width: 1400px;
+  height: 2572px;
+  left: 260px;
+  top: 29px;
+}
+
+.container-job-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 16px;
+  gap: 32px;
+
+  width: 1400px;
+  height: 164px;
+
+  /* dp1 */
+
+  box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+
+}
+
+@media screen and (max-width: 414px) {
+  .container {
+    width: 414px;
+    position: relative;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    height: auto;
+
+    background: #EFF0F5;
+  }
+
+  .container-job-bar {
+    width: 396px;
+  }
+}

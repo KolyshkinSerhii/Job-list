@@ -1,6 +1,7 @@
 import React from 'react'
 import { JobType } from '../Redux/JobListReducer'
 import Job from './Job'
+import './JobList.scss'
 
 type Props = {
   jobs: Array<JobType>
@@ -9,9 +10,9 @@ type Props = {
 const JobList: React.FC<Props> = ({jobs}) => {
 
   return (
-    <div className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+    <div className="container">
       {jobs.map( job =>
-        <div key={job.id} className="pb-3 sm:pb-4">
+        <div key={job.id} className="container-job-bar">
           <Job job={job}/>
         </div>)}
     </div>

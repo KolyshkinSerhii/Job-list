@@ -1,0 +1,346 @@
+@mixin font-roboto {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  /* or 133% */
+
+  letter-spacing: -0.5625px;
+
+  /* Text/Dark */
+
+  color: #3A4562;
+  font-stretch: 100;
+}
+
+@mixin font-proxima-nova {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  /* or 125% */
+
+  letter-spacing: -0.75px;
+
+  color: #3A4562;
+}
+
+@mixin apply-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 18px 25px;
+  gap: 10px;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  /* Dark/01 */
+
+  background: #384564;
+  border-radius: 8px;
+
+  color: #fff;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@mixin separator {
+  background: #3A4562;
+  mix-blend-mode: normal;
+  opacity: 0.13;
+  transform: rotate(90deg);
+}
+
+.detailedInfo-container {
+  width: 1920px;
+  height: min(2000px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+
+  padding-top: 55px;
+}
+
+.wrapper-left {
+  width: 800px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.wrapper-left-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.wrapper-left-h1 {
+  @include font-proxima-nova;
+  padding-bottom: 10px;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.413333px;
+}
+
+.wrapper-left-head-save {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wrapper-left-head-save-text {
+  @include font-roboto
+}
+
+.apply-button {
+  @include apply-button
+}
+
+.wrapper-left-description {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.wrapper-left-job-description-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wrapper-left-description-name {
+  @include font-proxima-nova;
+  width: 500px;
+  padding-right: 60px;
+}
+
+.wrapper-left-description-salary-amount {
+  @include font-proxima-nova
+}
+
+.post-date {
+  @include font-roboto;
+  color: rgba(56, 65, 93, 0.355988);
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.wrapper-left-description-responsbility {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.wrapper-left-description-h2 {
+  @include font-proxima-nova;
+  line-height: 25px;
+  letter-spacing: -0.625px;
+  padding-top: 25px;
+  padding-bottom: 7px;
+}
+
+.wrapper-left-description-responsobility-text {
+  @include font-roboto;
+}
+
+.wrapper-left-description-list {
+  @include font-roboto;
+  list-style-type: square;
+}
+
+.wrapper-left-additional-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.list-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-item-employment {
+  @include font-proxima-nova;
+  width: 220px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-right: 8px;
+
+  font-size: 16px;
+  line-height: 16px;
+
+  text-align: center;
+  letter-spacing: -0.457143px;
+
+  /* Bright/Blue Calm */
+
+  color: #55699E;
+
+  background: rgba(161, 177, 219, 0.317343);
+  /* Functional/Option border */
+
+  border: 1px solid rgba(85, 105, 158, 0.3);
+  border-radius: 8px;
+}
+
+.list-item-benefits {
+  @include font-proxima-nova;
+  width: 220px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-right: 8px;
+
+  font-size: 16px;
+  line-height: 16px;
+
+  text-align: center;
+  letter-spacing: -0.457143px;
+
+  background: rgba(255, 207, 0, 0.15);
+  border: 1px solid #FFCF00;
+  border-radius: 8px;
+}
+
+.wrapper-left-images-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapper-left-images-row-item {
+
+  width: 220px;
+  height: 130px;
+  margin-top: 12px;
+  margin-right: 8px;
+  background: #D8D8D8;
+  border-radius: 8px;
+}
+
+.toJobBoardButton {
+  width: 215px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #3A4562;
+
+  background: lightgray;
+  border-radius: 8px;
+}
+
+.wrapper-right {
+  width: 400px;
+  height: 436px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #2A3047;
+  border-radius: 8px;
+}
+
+.wrapper-right-contacts {
+  position: relative;
+  width: 400px;
+  height: 218px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 50px;
+
+  background: #2A3047;
+
+  @include font-roboto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #E8EBF3;
+  font-stretch: 100;
+
+  overflow: hidden;
+}
+
+.wrapper-rigth-contacts-circle {
+  position: absolute;
+  left: -27%;
+  width: 273px;
+  height: 273px;
+  z-index: 1;
+  
+  border-radius: 50%;
+  background: #202336;
+}
+
+.wrapper-right-contacts-department-name {
+  @include font-proxima-nova;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  /* or 125% */
+  z-index: 1000;
+  letter-spacing: -0.625px;
+
+  color: #E7EAF0;
+}
+
+.wrapper-right-contacts-address {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+
+  z-index: 1000;
+}
+
+.wrapper-right-contacts-address img {
+  width: 13px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.wrapper-right-contacts-phone {
+  z-index: 1000;
+}
+
+.wrapper-right-map {
+  width: 400px;
+  height: 218px;
+  background: #55699E;
+}

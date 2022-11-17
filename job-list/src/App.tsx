@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from './Redux/hooks'
 import { requestJobList } from './Redux/JobListReducer'
-import './App.css';
 import JobList from './components/JobList';
 import DetailedJob from './components/DetailedJob';
 import { Routes, Route } from 'react-router-dom';
+import './App.scss'
 
 const App = () => {
 
