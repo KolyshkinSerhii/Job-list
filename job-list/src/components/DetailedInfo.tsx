@@ -29,6 +29,13 @@ const DetailedInfo: React.FC<Props> = ({ job }) => {
   })
   if (!isLoaded) return <div>...Loading</div>
 
+  const date1 = new Date();
+  const date2 = new Date(job.createdAt);
+
+  const oneDay = 1000 * 60 * 60 * 24;
+  const diffInTime = date1.getTime() - date2.getTime();
+  const diffInDays = Math.round(diffInTime / oneDay);
+
   return (
     <div className='detailedInfo-container'>
       <div className='wrapper'>
@@ -53,7 +60,7 @@ const DetailedInfo: React.FC<Props> = ({ job }) => {
                 <div className='wrapper-left-description-salary-text'>brutto, per year</div>
               </div>
             </div>
-            <p className='post-date'>{job.createdAt}</p>
+            <p className='post-date'>{diffInDays} day ago</p>
             <div className='wrapper-left-description-responsbility'>
               <h2 className='wrapper-left-description-h2'>Responsobilities</h2>
               <div className='wrapper-left-description-responsobility-text'>{job.description}</div>
