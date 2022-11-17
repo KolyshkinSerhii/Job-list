@@ -1,7 +1,9 @@
-import React from 'react'
+import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import React, { useMemo } from 'react'
 import { NavLink } from 'react-router-dom'
 import { JobType } from '../Redux/JobListReducer'
 import './DetailedInfo.scss'
+
 const Rectangle = require("../static/images/Icons/General/Rectangle.png")
 const Shape = require("../static/images/Icons/General/Shape.png")
 const ReturnButton = require("../static/images/Buttons/Arrow.png")
@@ -11,13 +13,29 @@ type Props = {
   job: JobType
 }
 
+type MapOptions = google.maps.MapOptions
+
 const DetailedInfo: React.FC<Props> = ({ job }) => {
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const center = useMemo(() => ({ lat: job.location.lat, lng: job.location.long }), [])
+  const options = useMemo<MapOptions>(() => ({
+    mapId: "f7696897e7abc08a",
+    disableDefaultIU: true,
+    clickableIcons: false,
+  }), [])
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY!
+  })
+  if (!isLoaded) return <div>...Loading</div>
+
   return (
     <div className='detailedInfo-container'>
       <div className='wrapper'>
         <div className='wrapper-left'>
           <div className='wrapper-left-head'>
             <p className='wrapper-left-h1'>Job details</p>
+            <hr className='separatorForMobile'/>
             <div className='wrapper-left-head-save'>
               <div><img src={Rectangle} alt="" /></div>
               <p className='wrapper-left-head-save-text'>Save to my list</p>
@@ -25,8 +43,8 @@ const DetailedInfo: React.FC<Props> = ({ job }) => {
               <p className='wrapper-left-head-save-text'>Share</p>
             </div>
           </div>
-          <hr />
-          <button className='apply-button'>APPLY NOW</button>
+          <hr className='separatorForWeb'/>
+          <button className={'apply-button mobile'}>APPLY NOW</button>
           <div className='wrapper-left-job-description'>
             <div className='wrapper-left-job-description-box'>
               <div className='wrapper-left-description-name'>{job.title}</div>
@@ -72,9 +90,13 @@ const DetailedInfo: React.FC<Props> = ({ job }) => {
               {job.pictures.map(pic =>
                 <img className='wrapper-left-images-row-item' src={pic} alt="" />)}
             </div>
+            <div>
+              <p className='wrapper-left-h1-onlyMobile'>Contacts</p>
+              <hr />
+            </div>
           </div>
           {<NavLink to={'/'}>
-            <button className='toJobBoardButton'>
+            <button className='toJobBoardButton mobile'>
               <img src={ReturnButton} alt="" />
               Return to job board
             </button>
@@ -99,7 +121,13 @@ const DetailedInfo: React.FC<Props> = ({ job }) => {
               <p>{job.email}</p>
             </div>
           </div>
-          <div className='wrapper-right-map'></div>
+          <div className='wrapper-right-map'>
+            <GoogleMap
+              zoom={10}
+              center={center}
+              options={options}
+              mapContainerClassName="map-container">
+            </GoogleMap></div>
         </div>
       </div>
     </div>

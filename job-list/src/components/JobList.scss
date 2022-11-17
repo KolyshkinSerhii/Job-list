@@ -1,15 +1,15 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
+  align-items: center;
+  padding-top: 25px;
   gap: 8px;
 
   position: absolute;
-  width: 1400px;
-  height: 2572px;
+  width: 1920px;
   left: 260px;
-  top: 29px;
+
+  background: gray;
 }
 
 .container-job-bar {
@@ -21,6 +21,8 @@
 
   width: 1400px;
   height: 164px;
+
+  background: #fff;
 
   /* dp1 */
 

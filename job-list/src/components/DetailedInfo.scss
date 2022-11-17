@@ -95,6 +95,7 @@
 .wrapper-left-h1 {
   @include font-proxima-nova;
   padding-bottom: 10px;
+  margin-top: 60px;
   font-size: 28px;
   line-height: 34px;
   letter-spacing: 0.413333px;
@@ -264,6 +265,10 @@
   border-radius: 8px;
 }
 
+.wrapper-left-h1-onlyMobile {
+  display: none;
+}
+
 .wrapper-right {
   width: 400px;
   height: 436px;
@@ -303,7 +308,7 @@
   width: 273px;
   height: 273px;
   z-index: 1;
-  
+
   border-radius: 50%;
   background: #202336;
 }
@@ -342,5 +347,72 @@
 .wrapper-right-map {
   width: 400px;
   height: 218px;
-  background: #55699E;
+}
+
+.map-container {
+  width: 400px;
+  height: 218px;
+}
+
+
+@media screen and (max-width: 414px) {
+  .detailedInfo-container {
+    width: 384px;
+  }
+  .separatorForWeb {
+    display: none;
+  }
+  .separatorForMobile {
+    margin-bottom: 32px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapper-left {
+    width: 384px;
+  }
+
+  .wrapper-left-head {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
+  .wrapper-left-job-description-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapper-left-description-salary {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  .wrapper-left-description-name {
+    width: 365px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .wrapper-left-h1-onlyMobile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 30px;
+
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0.413333px;
+
+    color: #3A4562;
+  }
 }
