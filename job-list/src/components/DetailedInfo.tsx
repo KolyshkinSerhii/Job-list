@@ -102,7 +102,7 @@ const DetailedInfo: React.FC<Props> = ({ job }) => {
               <hr />
             </div>
           </div>
-          {<NavLink to={'/'}>
+          {<NavLink to={'/Job-list/'}>
             <button className='toJobBoardButton mobile'>
               <img src={ReturnButton} alt="" />
               Return to job board
