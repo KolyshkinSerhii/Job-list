@@ -19,7 +19,7 @@ const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<JobList jobs={jobs}/>} />
+        <Route path='/Job-list/' element={<JobList jobs={jobs}/>} />
         <Route path='/detailedInfo/:id' element={<DetailedJob jobs={jobs}/>} />
       </Routes>
     </div>
